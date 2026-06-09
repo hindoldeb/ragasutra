@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ragasutra — The Soul of Indian Classical Music | Hindol Deb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-maroon: #3d0c0c;
+    --royal-crimson: #8b1a1a;
+    --antique-gold: #c9a84c;
+    --pale-gold: #e8d5a3;
+    --parchment: #f5e6c8;
+    --dark-parchment: #e8d5a3;
+    --ivory: #fdf6e3;
+    --deep-brown: #2c1810;
+    --shadow-brown: #1a0f0a;
+    --accent-teal: #1a5c5c;
+    --text-dark: #2c1810;
+    --text-medium: #5c3a1e;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--shadow-brown);
+    color: var(--text-dark);
+    font-family: 'EB Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* ===== ORNAMENTAL DIVIDERS ===== */
+  .ornament-divider {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--antique-gold);
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    line-height: 1;
+  }
+
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--antique-gold), transparent);
+    vertical-align: middle;
+    margin: 0 1rem;
+  }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(26, 15, 10, 0.97), rgba(26, 15, 10, 0.85));
+    border-bottom: 2px solid var(--antique-gold);
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--antique-gold);
+    font-size: 1.3rem;
+    letter-spacing: 0.15rem;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--pale-gold);
+    font-size: 0.75rem;
+    display: block;
+    letter-spacing: 0.3rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--pale-gold);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--antique-gold);
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--shadow-brown);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/hindol_gmi_stage2.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.3) sepia(0.5);
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(26,15,10,0.8) 100%);
+    z-index: 1;
+  }
+
+  .hero-border {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-border::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .hero-sanskrit {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--antique-gold);
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--antique-gold);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 0 40px rgba(201, 168, 76, 0.5), 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    color: var(--pale-gold);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .hero-tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--parchment);
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    border: 1px solid var(--antique-gold);
+    color: var(--antique-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding: 0.8rem 2.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--antique-gold);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: -1;
+  }
+
+  .hero-cta:hover {
+    color: var(--shadow-brown);
+  }
+
+  .hero-cta:hover::before {
+    transform: translateX(0);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: var(--antique-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    text-align: center;
+    animation: pulse 2s infinite;
+  }
+
+  .scroll-indicator::after {
+    content: '↓';
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* ===== SECTION STYLES ===== */
+  section {
+    padding: 5rem 2rem;
+    position: relative;
+  }
+
+  .section-parchment {
+    background: linear-gradient(135deg, var(--ivory) 0%, var(--parchment) 50%, var(--dark-parchment) 100%);
+  }
+
+  .section-dark {
+    background: linear-gradient(135deg, var(--shadow-brown) 0%, var(--deep-brown) 50%, var(--deep-maroon) 100%);
+    color: var(--pale-gold);
+  }
+
+  .section-maroon {
+    background: linear-gradient(135deg, var(--deep-maroon) 0%, var(--royal-crimson) 50%, var(--deep-maroon) 100%);
+    color: var(--pale-gold);
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--antique-gold);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-title-dark {
+    color: var(--deep-maroon);
+  }
+
+  .section-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .section-subtitle-light {
+    color: var(--pale-gold);
+    opacity: 0.85;
+  }
+
+  /* ===== ABOUT HINDOL SECTION ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-image-frame {
+    position: relative;
+  }
+
+  .about-image-frame img {
+    width: 100%;
+    display: block;
+    filter: sepia(0.2) contrast(1.05);
+  }
+
+  .about-image-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 2px solid var(--antique-gold);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .about-image-frame::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .about-image-frame img {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-text h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--deep-maroon);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .quote-block {
+    border-left: 3px solid var(--antique-gold);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(201, 168, 76, 0.08);
+  }
+
+  .quote-block p {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--deep-maroon);
+    line-height: 1.8;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .quote-block cite {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    color: var(--antique-gold);
+    font-style: normal;
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(139, 26, 26, 0.2);
+    background: rgba(139, 26, 26, 0.04);
+  }
+
+  .award-icon {
+    color: var(--antique-gold);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .award-text {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    line-height: 1.5;
+  }
+
+  /* ===== RAGASUTRA PROJECT SECTION ===== */
+  .ragasutra-intro {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .ragasutra-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--pale-gold);
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .ragasutra-image {
+    position: relative;
+  }
+
+  .ragasutra-image img {
+    width: 100%;
+    display: block;
+    filter: sepia(0.3) brightness(0.85);
+  }
+
+  .ragasutra-image::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .ragasutra-image img {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== INDIAN CLASSICAL MUSIC SECTION ===== */
+  .icm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .icm-card {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(139, 26, 26, 0.2);
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .icm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(139, 26, 26, 0.15);
+  }
+
+  .icm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--royal-crimson), var(--antique-gold), var(--royal-crimson));
+  }
+
+  .icm-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .icm-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--deep-maroon);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .icm-card p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-medium);
+  }
+
+  /* ===== MICROTONAL SECTION ===== */
+  .microtonal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .microtonal-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--pale-gold);
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .microtonal-text h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--antique-gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.15rem;
+    margin: 2rem 0 1rem;
+    text-transform: uppercase;
+  }
+
+  .ornament-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .ornament-list li {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .ornament-list li:last-child {
+    border-bottom: none;
+  }
+
+  .ornament-name {
+    font-family: 'Cinzel', serif;
+    color: var(--antique-gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+
+  .ornament-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--pale-gold);
+    opacity: 0.85;
+  }
+
+  .microtonal-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .microtonal-images img {
+    width: 100%;
+    display: block;
+    filter: sepia(0.2) brightness(0.9);
+  }
+
+  .microtonal-images .img-tall {
+    grid-row: span 3;
+  }
+
+  /* ===== PERFORMANCES SECTION ===== */
+  .performances-world {
+    margin-top: 3rem;
+  }
+
+  .world-map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .performances-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .perf-tab {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--antique-gold);
+    color: var(--antique-gold);
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s;
+  }
+
+  .perf-tab.active,
+  .perf-tab:hover {
+    background: var(--antique-gold);
+    color: var(--shadow-brown);
+  }
+
+  .performance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .perf-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .perf-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--antique-gold);
+  }
+
+  .perf-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: sepia(0.3) brightness(0.85);
+    display: block;
+  }
+
+  .perf-card-body {
+    padding: 1.5rem;
+  }
+
+  .perf-card-location {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .perf-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--pale-gold);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .perf-card-details {
+    font-size: 0.85rem;
+    color: var(--pale-gold);
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  .perf-card-tabla {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    font-size: 0.8rem;
+    color: var(--antique-gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05rem;
+  }
+
+  /* ===== GALLERY SECTION ===== */
+  .gallery-masonry {
+    columns: 3;
+    column-gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s, filter 0.4s;
+    filter: sepia(0.15) brightness(0.9);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: sepia(0) brightness(1);
+  }
+
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,15,10,0.8) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+
+  .gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+  }
+
+  .gallery-item-caption {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15rem;
+    color: var(--pale-gold);
+    text-transform: uppercase;
+  }
+
+  /* ===== TABLA PLAYERS SECTION ===== */
+  .tabla-players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .tabla-player-card {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(139, 26, 26, 0.2);
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .tabla-player-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .tabla-player-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--royal-crimson), var(--antique-gold), var(--royal-crimson));
+  }
+
+  .tabla-player-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--antique-gold);
+    margin: 0 auto 1.2rem;
+    display: block;
+    filter: sepia(0.2);
+  }
+
+  .tabla-player-name {
+    font-family: 'Cinzel', serif;
+    color: var(--deep-maroon);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .tabla-player-role {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25rem;
+    color: var(--antique-gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .tabla-player-bio {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+  }
+
+  /* ===== MUGHAL ART SECTION ===== */
+  .mughal-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mughal-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/mughal_court_music.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.2) sepia(0.5);
+    z-index: 0;
+  }
+
+  .mughal-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .mughal-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--pale-gold);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== TRAINING & LINEAGE ===== */
+  .lineage-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 3rem auto;
+    max-width: 700px;
+  }
+
+  .lineage-node {
+    text-align: center;
+    padding: 1rem 2rem;
+    border: 1px solid var(--antique-gold);
+    background: rgba(201, 168, 76, 0.08);
+    min-width: 280px;
+    position: relative;
+  }
+
+  .lineage-node-name {
+    font-family: 'Cinzel', serif;
+    color: var(--antique-gold);
+    font-size: 0.95rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .lineage-node-role {
+    font-size: 0.8rem;
+    color: var(--pale-gold);
+    opacity: 0.7;
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+
+  .lineage-connector {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, var(--antique-gold), transparent);
+    margin: 0 auto;
+  }
+
+  .lineage-split {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .lineage-split-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ===== PHOTO GALLERY FULL ===== */
+  .photo-strip {
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .photo-strip img {
+    flex: 1;
+    height: 250px;
+    object-fit: cover;
+    filter: sepia(0.2) brightness(0.85);
+    transition: flex 0.4s, filter 0.4s;
+  }
+
+  .photo-strip img:hover {
+    flex: 2;
+    filter: sepia(0) brightness(1);
+  }
+
+  /* ===== RAGA SECTION ===== */
+  .raga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .raga-card {
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    transition: background 0.3s;
+  }
+
+  .raga-card:hover {
+    background: rgba(201, 168, 76, 0.08);
+  }
+
+  .raga-name {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--antique-gold);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .raga-time {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2rem;
+    color: var(--pale-gold);
+    opacity: 0.6;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .raga-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--pale-gold);
+    opacity: 0.8;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--shadow-brown);
+    border-top: 2px solid var(--antique-gold);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--antique-gold);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--pale-gold);
+    opacity: 0.7;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--pale-gold);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+    color: var(--antique-gold);
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--pale-gold);
+    opacity: 0.4;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.1rem;
+  }
+
+  /* ===== ORNAMENTAL CORNERS ===== */
+  .corner-ornament {
+    position: relative;
+  }
+
+  .corner-ornament::before,
+  .corner-ornament::after {
+    content: '✦';
+    position: absolute;
+    color: var(--antique-gold);
+    font-size: 1.2rem;
+    opacity: 0.5;
+  }
+
+  .corner-ornament::before {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .corner-ornament::after {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .about-grid,
+    .ragasutra-intro,
+    .microtonal-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .icm-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-masonry {
+      columns: 2;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .microtonal-images {
+      grid-template-columns: 1fr;
+    }
+
+    .microtonal-images .img-tall {
+      grid-row: span 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery-masonry {
+      columns: 1;
+    }
+
+    .awards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .lineage-split {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* ===== GOLD BORDER UTILITY ===== */
+  .gold-border {
+    border: 1px solid var(--antique-gold);
+    padding: 0.3rem;
+  }
+
+  .gold-border img {
+    display: block;
+    width: 100%;
+  }
+
+  /* ===== HIGHLIGHTED TEXT ===== */
+  .highlight-gold {
+    color: var(--antique-gold);
+    font-style: italic;
+  }
+
+  /* ===== FULL WIDTH IMAGE BANNER ===== */
+  .image-banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.3) brightness(0.7);
+  }
+
+  .image-banner-caption {
+    background: rgba(26,15,10,0.9);
+    padding: 0.8rem 2rem;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    color: var(--antique-gold);
+    text-transform: uppercase;
+  }
+
+  /* ===== SECTION SEPARATOR ===== */
+  .section-sep {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, var(--shadow-brown), var(--antique-gold), var(--royal-crimson), var(--antique-gold), var(--shadow-brown));
+  }
+
+  /* ===== INLINE IMAGE FLOAT ===== */
+  .float-right {
+    float: right;
+    width: 280px;
+    margin: 0 0 1.5rem 2rem;
+  }
+
+  .float-left {
+    float: left;
+    width: 280px;
+    margin: 0 2rem 1.5rem 0;
+  }
+
+  .clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  /* ===== MUGHAL MINIATURE INSET ===== */
+  .mughal-inset {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+
+  .mughal-inset img {
+    width: 200px;
+    flex-shrink: 0;
+    filter: sepia(0.1);
+    border: 2px solid var(--antique-gold);
+  }
+
+  .mughal-inset-text {
+    flex: 1;
+  }
+
+  /* ===== WORLD TOUR TIMELINE ===== */
+  .tour-timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .tour-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--antique-gold), transparent);
+  }
+
+  .tour-event {
+    position: relative;
+    padding: 1.2rem 0 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  .tour-event::before {
+    content: '◆';
+    position: absolute;
+    left: -0.55rem;
+    top: 1.3rem;
+    color: var(--antique-gold);
+    font-size: 0.6rem;
+  }
+
+  .tour-event-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2rem;
+    color: var(--antique-gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .tour-event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--pale-gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .tour-event-detail {
+    font-size: 0.85rem;
+    color: var(--pale-gold);
+    opacity: 0.65;
+    line-height: 1.6;
+  }
+
+  /* ===== SITAR ANATOMY SECTION ===== */
+  .sitar-anatomy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .sitar-anatomy img {
+    width: 100%;
+    display: block;
+    filter: sepia(0.2);
+  }
+
+  .sitar-facts {
+    padding: 0;
+    list-style: none;
+  }
+
+  .sitar-fact {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .sitar-fact-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    color: var(--antique-gold);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .sitar-fact-value {
+    font-size: 0.95rem;
+    color: var(--pale-gold);
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo">
+    Ragasutra
+    <span>Hindol Deb · Sitarist</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">The Artist</a></li>
+    <li><a href="#ragasutra">Ragasutra</a></li>
+    <li><a href="#classical">Classical Music</a></li>
+    <li><a href="#microtonal">Microtones</a></li>
+    <li><a href="#performances">Performances</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#tabla">Tabla Players</a></li>
+  </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-border"></div>
+  <div class="hero-content">
+    <p class="hero-sanskrit">रागसूत्र — The Thread of Raga</p>
+    <h1 class="hero-title">Ragasutra</h1>
+    <p class="hero-subtitle">Hindol Deb · Sitar &amp; Tabla · Indian Classical Music</p>
+    <p class="hero-tagline">
+      "Where the ancient thread of Raga unspools into infinite space —<br>
+      contemplative and ecstatic, traditional and timeless."
+    </p>
+    <a href="#about" class="hero-cta">Enter the World of Raga</a>
+  </div>
+  <div class="scroll-indicator">Scroll to Discover</div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ABOUT HINDOL DEB -->
+<section class="section-parchment" id="about">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Artist</p>
+      <h2 class="section-title section-title-dark">Hindol Deb</h2>
+      <p class="section-subtitle">Master Sitarist of the Maihar &amp; Rampur Gharanas</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image-frame">
+        <img src="images/hindol_portrait_tall.jpg" alt="Hindol Deb — Master Sitarist">
+      </div>
+      <div class="about-text">
+        <h3>A Tale of Two Traditions</h3>
+        <p>
+          Hindol Deb is an internationally renowned Indian classical sitarist whose artistry is defined by a profound adherence to his traditional heritage and a visionary quest for musical expansion. Representing the celebrated <span class="highlight-gold">Maihar and Rampur Gharanas</span>, Hindol has established himself as a virtuoso who bridges the ancient spiritual depth of the Raga with the infinite possibilities of global contemporary music.
+        </p>
+        <p>
+          Hindol's journey began at age five under his father, <span class="highlight-gold">Sri Panchanan Sardar</span>. He underwent rigorous training with <span class="highlight-gold">Pandit Santosh Banerjee</span> (Rampur Gharana) and <span class="highlight-gold">Pandit Deepak Chaudhury</span> (Maihar Gharana), a disciple of Pandit Ravi Shankar. Deeply influenced by masters like Ali Akbar Khan, Nikhil Banerji, and Zia-Mohiuddin Dagar, Hindol developed a unique style by integrating the meditative Dhrupad Ang and the vocal-like Been Ang (Veena style) onto the sitar.
+        </p>
+        <p>
+          His performances are celebrated for their technical finesse and emotional maturity, leading critic Prakash Wadhera to remark that his playing is marked by <em>'profound maturity.'</em> To date, he has released four albums dedicated to the purity of Indian classical music.
+        </p>
+
+        <div class="quote-block">
+          <p>"Music is the space between the notes — and the raga lives in that space. My journey is about honoring that sacred space while expanding its boundaries."</p>
+          <cite>— Hindol Deb</cite>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">National Sitar Scholarship, India</span>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">Sahitya Kala Parishad Fellowship</span>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">Master's in Jazz — University of Music Cologne</span>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">Residency — Academy of Carnegie Hall, New York</span>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">Residency — RECOLLETS, Paris, France</span>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">✦</span>
+            <span class="award-text">Residency — ETHNO Rikskonserter, Sweden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament-divider">✦ ✦ ✦</div>
+
+    <!-- Lineage -->
+    <div class="section-header" style="margin-top:2rem;">
+      <p class="section-eyebrow">Musical Lineage</p>
+      <h2 class="section-title section-title-dark">The Guru-Shishya Parampara</h2>
+      <p class="section-subtitle">A sacred chain of transmission stretching back through the centuries</p>
+    </div>
+
+    <div class="lineage-tree">
+      <div class="lineage-node">
+        <div class="lineage-node-name">Pandit Ravi Shankar</div>
+        <div class="lineage-node-role">Legendary Sitarist — Maihar Gharana</div>
+      </div>
+      <div class="lineage-connector"></div>
+      <div class="lineage-split">
+        <div class="lineage-split-item">
+          <div class="lineage-node">
+            <div class="lineage-node-name">Pandit Deepak Chaudhury</div>
+            <div class="lineage-node-role">Disciple of Ravi Shankar</div>
+          </div>
+        </div>
+        <div class="lineage-split-item">
+          <div class="lineage-node">
+            <div class="lineage-node-name">Pandit Santosh Banerjee</div>
+            <div class="lineage-node-role">Rampur Gharana</div>
+          </div>
+        </div>
+      </div>
+      <div class="lineage-connector"></div>
+      <div class="lineage-node" style="border-color: var(--royal-crimson); background: rgba(139,26,26,0.08);">
+        <div class="lineage-node-name" style="font-size:1.1rem;">Hindol Deb</div>
+        <div class="lineage-node-role">Master Sitarist · Ragasutra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- RAGASUTRA PROJECT -->
+<section class="section-dark" id="ragasutra">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Project</p>
+      <h2 class="section-title">Ragasutra</h2>
+      <p class="section-subtitle section-subtitle-light">Pure Indian Classical Music in the Traditional Raga Format</p>
+    </div>
+
+    <div class="ragasutra-intro">
+      <div class="ragasutra-text">
+        <p>
+          <span class="highlight-gold">Ragasutra</span> — meaning <em>"the thread of Raga"</em> — is Hindol Deb's most personal and profound musical offering. It is a return to the source, a dedication to the purity of the Hindustani classical tradition in its most essential form: a solo sitar accompanied by the tabla, unfolding in the ancient format of the raga.
+        </p>
+        <p>
+          In Ragasutra, there are no concessions to modernity, no fusion, no compromise. It is Indian classical music as it has been practiced for centuries — a meditative journey through the architecture of a raga, from the slow, introspective <span class="highlight-gold">Alap</span> to the rhythmically exhilarating <span class="highlight-gold">Gat</span> and <span class="highlight-gold">Jhala</span>. Each performance is a unique and unrepeatable event, a conversation between the sitarist, the tabla player, and the raga itself.
+        </p>
+        <p>
+          The name <em>Ragasutra</em> evokes the ancient Sanskrit concept of the <em>sutra</em> — a thread or aphorism that contains within it a vast universe of meaning. Just as a sutra is a condensed vessel of wisdom, the raga is a condensed vessel of emotion and spirit. Hindol's Ragasutra performances seek to unravel that thread, revealing the infinite depth and beauty contained within each raga.
+        </p>
+        <div class="quote-block" style="border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.05);">
+          <p>"Indian classical music is contemplative and ecstatic at the same time. Come and experience the magic unfold."</p>
+          <cite>— Hindol Deb on Ragasutra</cite>
+        </div>
+      </div>
+      <div class="ragasutra-image">
+        <div class="gold-border">
+          <img src="images/hindol_red_shirt_portrait.jpg" alt="Hindol Deb with Sitar — Ragasutra">
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Strip -->
+    <div class="photo-strip">
+      <img src="images/hindol_gmi_performance.jpg" alt="Hindol Deb Live Performance">
+      <img src="images/hindol_sitar_church_performance.jpeg" alt="Church Concert Performance">
+      <img src="images/hindol_sitar_tabla_duo.jpeg" alt="Sitar and Tabla Duo">
+      <img src="images/hindol_soniq_bw.jpg" alt="Hindol Deb Black and White">
+      <img src="images/hindol_indian_classical_solo.jpeg" alt="Indian Classical Solo">
+    </div>
+
+    <!-- Ragas Performed -->
+    <div class="section-header" style="margin-top: 3rem;">
+      <p class="section-eyebrow">The Ragas</p>
+      <h2 class="section-title">Ragas of the Repertoire</h2>
+      <p class="section-subtitle section-subtitle-light">Each raga is a universe — a specific emotional and temporal landscape</p>
+    </div>
+
+    <div class="raga-grid">
+      <div class="raga-card">
+        <div class="raga-name">Bhimpalasi</div>
+        <div class="raga-time">Afternoon · Karuna &amp; Bhakti</div>
+        <div class="raga-desc">A raga of deep longing and devotion, evoking the tender emotions of the afternoon hours. Its pentatonic ascending scale gives it a haunting, meditative quality.</div>
+      </div>
+      <div class="raga-card">
+        <div class="raga-name">Yaman</div>
+        <div class="raga-time">Evening · Shringara &amp; Bhakti</div>
+        <div class="raga-desc">One of the most beloved ragas of the evening, Yaman is associated with romance and devotion. Its raised fourth (tivra Ma) gives it an ethereal, expansive quality.</div>
+      </div>
+      <div class="raga-card">
+        <div class="raga-name">Hemant</div>
+        <div class="raga-time">Late Evening · Shanta &amp; Karuna</div>
+        <div class="raga-desc">A raga of the early winter season, Hemant evokes a sense of quiet contemplation and gentle melancholy. Its pentatonic structure creates a serene and introspective atmosphere.</div>
+      </div>
+      <div class="raga-card">
+        <div class="raga-name">Gawoti</div>
+        <div class="raga-time">Late Night · Vira &amp; Adbhuta</div>
+        <div class="raga-desc">A rare and majestic raga of the late night, Gawoti is known for its grandeur and power. Its unique combination of notes creates a sense of awe and wonder.</div>
+      </div>
+      <div class="raga-card">
+        <div class="raga-name">Kirwani</div>
+        <div class="raga-time">Night · Karuna &amp; Shringara</div>
+        <div class="raga-desc">A raga of profound emotional depth, Kirwani is known for its ability to evoke both joy and sorrow simultaneously. Its distinctive notes create a bittersweet, poignant atmosphere.</div>
+      </div>
+      <div class="raga-card">
+        <div class="raga-name">Desh</div>
+        <div class="raga-time">Late Evening · Shringara &amp; Bhakti</div>
+        <div class="raga-desc">A raga associated with the monsoon season and romantic longing, Desh is one of the most popular and beloved ragas in the Hindustani tradition. Its flowing phrases evoke the beauty of nature.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- INDIAN CLASSICAL MUSIC -->
+<section class="section-parchment" id="classical">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Tradition</p>
+      <h2 class="section-title section-title-dark">Indian Classical Music</h2>
+      <p class="section-subtitle">One of the world's oldest and most sophisticated musical traditions</p>
+    </div>
+
+    <!-- Mughal Miniature Inset -->
+    <div class="mughal-inset">
+      <img src="images/mughal_music_miniature.jpg" alt="Mughal Court Music — Miniature Painting">
+      <div class="mughal-inset-text">
+        <p style="font-size:1.1rem; line-height:1.9; color:var(--text-dark); margin-bottom:1rem;">
+          Indian classical music is one of the oldest and most sophisticated musical traditions in the world, with roots stretching back over three thousand years to the ancient <span class="highlight-gold">Sama Veda</span>, the sacred hymns of the Vedic civilization. It is a living tradition, continuously evolving yet deeply rooted in its ancient origins.
+        </p>
+        <p style="font-size:1.1rem; line-height:1.9; color:var(--text-dark); margin-bottom:1rem;">
+          The tradition is divided into two main streams: <span class="highlight-gold">Hindustani</span> (North Indian) and <span class="highlight-gold">Carnatic</span> (South Indian). Hindol Deb's Ragasutra is firmly rooted in the Hindustani tradition, which was profoundly shaped by the Mughal court culture of the 16th and 17th centuries, when Persian and Central Asian musical influences merged with the ancient Indian tradition to create a uniquely rich and complex art form.
+        </p>
+        <p style="font-size:1.1rem; line-height:1.9; color:var(--text-dark);">
+          At the heart of Indian classical music are two fundamental concepts: the <span class="highlight-gold">Raga</span> (melodic framework) and the <span class="highlight-gold">Tala</span> (rhythmic cycle). These two elements, in constant dialogue and interplay, form the basis of all Indian classical music performance.
+        </p>
+      </div>
+    </div>
+
+    <div class="ornament-divider">✦ ✦ ✦</div>
+
+    <div class="icm-grid">
+      <div class="icm-card">
+        <span class="icm-card-icon">🎵</span>
+        <h3>The Raga</h3>
+        <p>
+          A raga is not merely a scale. It is a living entity with its own personality, mood, time of day, and season. Each raga prescribes not only which notes to use, but how to approach them, which to emphasize, and which ornaments to employ. A skilled musician uses the raga as a framework for spontaneous improvisation, creating a unique performance each time.
+        </p>
+      </div>
+      <div class="icm-card">
+        <span class="icm-card-icon">🥁</span>
+        <h3>The Tala</h3>
+        <p>
+          The tala is the rhythmic cycle that underlies all Indian classical music. Unlike Western time signatures, the tala is a cyclical structure of beats that can range from simple cycles of 4 or 8 beats to complex cycles of 7, 10, 12, or 16 beats. The interplay between the melodic improvisation of the soloist and the rhythmic dialogue of the tabla creates the dynamic tension at the heart of Indian classical music.
+        </p>
+      </div>
+      <div class="icm-card">
+        <span class="icm-card-icon">🌅</span>
+        <h3>Time &amp; Season</h3>
+        <p>
+          One of the most remarkable aspects of Indian classical music is its deep connection to time and nature. Each raga is associated with a specific time of day or season. Morning ragas evoke the freshness of dawn; evening ragas capture the melancholy of dusk; monsoon ragas conjure the drama of the rains. This temporal dimension gives Indian classical music a profound sense of context and meaning.
+        </p>
+      </div>
+      <div class="icm-card">
+        <span class="icm-card-icon">🧘</span>
+        <h3>Improvisation</h3>
+        <p>
+          Indian classical music is fundamentally an improvisational art. While the raga provides a framework of rules and notes, the musician is free to explore its possibilities in real time, creating a unique performance each time. This improvisation is not random, however — it is guided by a deep understanding of the raga's character and the rules of the tradition. The result is a music that is simultaneously structured and free.
+        </p>
+      </div>
+      <div class="icm-card">
+        <span class="icm-card-icon">🎓</span>
+        <h3>Guru-Shishya Parampara</h3>
+        <p>
+          The transmission of Indian classical music has traditionally taken place through the <em>guru-shishya parampara</em> — the teacher-student tradition. In this system, the student lives with the teacher for many years, absorbing not just the technical knowledge of the music but its spirit, philosophy, and way of life. This intimate form of transmission ensures that the subtle nuances and oral traditions of the music are preserved across generations.
+        </p>
+      </div>
+      <div class="icm-card">
+        <span class="icm-card-icon">🏛️</span>
+        <h3>The Gharana System</h3>
+        <p>
+          A <em>gharana</em> is a school or lineage of Indian classical music, each with its own distinctive style, techniques, and repertoire. The major gharanas of sitar music include the Maihar Gharana, associated with Ravi Shankar, and the Rampur Gharana. Hindol Deb represents both of these great traditions, bringing their combined wisdom and artistry to his Ragasutra performances.
+        </p>
+      </div>
+    </div>
+
+    <!-- Full width image -->
+    <div style="margin-top: 3rem;">
+      <img src="images/indian_classical_varanasi.jpg" alt="Indian Classical Concert in Varanasi" class="image-banner">
+      <div class="image-banner-caption">Indian Classical Music — A Living Tradition Spanning Millennia</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- MICROTONAL BENDS -->
+<section class="section-dark" id="microtonal">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Technique</p>
+      <h2 class="section-title">The Art of Microtonal Bends</h2>
+      <p class="section-subtitle section-subtitle-light">The Soul of the Sitar — Meend, Gamak &amp; the Infinite Space Between Notes</p>
+    </div>
+
+    <div class="microtonal-layout">
+      <div class="microtonal-text">
+        <p>
+          What makes the sitar one of the most expressive instruments in the world is its extraordinary ability to <span class="highlight-gold">bend and slide between notes</span> — to inhabit the infinite microtonal space that lies between the fixed pitches of Western music. This is the realm of <em>meend</em>, <em>gamak</em>, <em>andolan</em>, and <em>murki</em> — the ornaments that give Indian classical music its distinctive voice and emotional depth.
+        </p>
+        <p>
+          In Western music, notes are fixed points — discrete steps on a staircase. In Indian classical music, notes are more like regions of a landscape, with infinite gradations of pitch between them. The musician does not merely play a note; they <span class="highlight-gold">approach it, inhabit it, and depart from it</span> in ways that carry profound emotional meaning.
+        </p>
+        <p>
+          On the sitar, these microtonal inflections are achieved by pulling the string sideways across the fret, stretching it to raise the pitch. A skilled sitarist can bend a note by a quarter tone, a half tone, or even a full tone, creating a seamless glide that mimics the nuances of the human voice. This technique, known as <span class="highlight-gold">meend</span>, is the most fundamental ornament of Hindustani classical music.
+        </p>
+
+        <div class="quote-block" style="border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.05);">
+          <p>"The beauty of the sitar lies in its ability to bend and slide between notes in ways that Western instruments cannot. These ornaments are not mere decorations — they are the very soul of the raga, breathing life and emotion into the music."</p>
+          <cite>— Hindol Deb, The Raga Notebook</cite>
+        </div>
+
+        <p>
+          The microtonal inflections of Indian classical music are not arbitrary. Each raga prescribes specific ornaments for specific notes, and a musician who uses the wrong ornament on the wrong note will immediately reveal their lack of understanding of the raga's character. The ornaments are, in a sense, the grammar of the raga — the rules that govern how the notes are to be spoken.
+        </p>
+
+        <h3>The Essential Ornaments</h3>
+        <ul class="ornament-list">
+          <li>
+            <span class="ornament-name">Meend</span>
+            <span class="ornament-desc">A smooth, continuous glide from one note to another, achieved by pulling the string sideways across the fret. Meend creates a sense of fluidity, grace, and vocal quality. It is the most fundamental ornament of Hindustani classical music, and the one that most clearly distinguishes it from Western music.</span>
+          </li>
+          <li>
+            <span class="ornament-name">Gamak</span>
+            <span class="ornament-desc">A rapid, forceful oscillation between two notes, creating a powerful and dramatic effect. Gamak is used to add energy, intensity, and rhythmic drive to a performance. It is particularly associated with the Dhrupad style of singing and the Been Ang style of sitar playing.</span>
+          </li>
+          <li>
+            <span class="ornament-name">Andolan</span>
+            <span class="ornament-desc">A gentle, slow oscillation around a note, creating a sense of subtle vibrato. Andolan is used to add warmth and expressiveness to specific notes in a raga, particularly those that are considered to have a special emotional significance.</span>
+          </li>
+          <li>
+            <span class="ornament-name">Murki</span>
+            <span class="ornament-desc">A rapid, ornamental turn around a note, similar to a trill or mordent in Western music. Murki adds grace and ornamentation to a phrase, creating a sense of lightness and agility.</span>
+          </li>
+          <li>
+            <span class="ornament-name">Kan</span>
+            <span class="ornament-desc">A grace note — a brief touch of an adjacent note before landing on the main note. Kan adds a sense of approach and direction to a note, giving it a sense of arrival and emphasis.</span>
+          </li>
+          <li>
+            <span class="ornament-name">Krintan</span>
+            <span class="ornament-desc">A hammer-on or pull-off technique, where a note is produced by the left hand alone without plucking. Krintan creates a smooth, connected quality between notes, adding to the vocal character of the sitar.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="microtonal-images">
+        <div class="gold-border img-tall">
+          <img src="images/sitar_closeup.jpg" alt="Sitar Close-up — Strings and Frets">
+        </div>
+        <div class="gold-border">
+          <img src="images/sitar_traditional_room.jpg" alt="Sitar in Traditional Setting">
+        </div>
+        <div class="gold-border">
+          <img src="images/tabla_drums.jpg" alt="Tabla Drums">
+        </div>
+        <div class="gold-border">
+          <img src="images/sitar_red_carpet.jpg" alt="Sitar on Red Carpet">
+        </div>
+      </div>
+    </div>
+
+    <!-- Sitar Anatomy -->
+    <div class="ornament-divider">✦ ✦ ✦</div>
+    <div class="section-header" style="margin-top:2rem;">
+      <p class="section-eyebrow">The Instrument</p>
+      <h2 class="section-title">The Sitar</h2>
+      <p class="section-subtitle section-subtitle-light">A resonant universe of strings, sympathetics, and infinite expression</p>
+    </div>
+
+    <div class="sitar-anatomy">
+      <div class="gold-border">
+        <img src="images/sitar_ornate.jpg" alt="The Sitar — Traditional Indian Instrument">
+      </div>
+      <ul class="sitar-facts">
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Origin</div>
+          <div class="sitar-fact-value">The sitar evolved in the Indian subcontinent during the Mughal era (16th–17th centuries), combining elements of the ancient veena with the Persian setar. Its name derives from the Persian <em>se tar</em> — "three strings."</div>
+        </li>
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Main Strings</div>
+          <div class="sitar-fact-value">6–7 main playing strings, tuned to the notes of the raga. The sitarist plucks these strings with a wire plectrum (mizrab) worn on the index finger of the right hand.</div>
+        </li>
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Sympathetic Strings</div>
+          <div class="sitar-fact-value">11–13 sympathetic strings (tarab) run beneath the main strings, tuned to the notes of the raga. These strings vibrate in sympathy with the main strings, creating the characteristic shimmering resonance of the sitar.</div>
+        </li>
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Curved Frets</div>
+          <div class="sitar-fact-value">The sitar's curved, movable frets allow the player to bend notes by pulling the string sideways, enabling the microtonal inflections that are central to Indian classical music.</div>
+        </li>
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Resonator</div>
+          <div class="sitar-fact-value">The main resonator is a large gourd (tumba) at the base of the instrument, with a smaller gourd sometimes attached at the top. The gourd amplifies the sound and gives the sitar its distinctive warm, resonant tone.</div>
+        </li>
+        <li class="sitar-fact">
+          <div class="sitar-fact-label">Length</div>
+          <div class="sitar-fact-value">Approximately 1.2 meters (4 feet) in length, the sitar is played seated on the floor, with the instrument resting diagonally across the player's body.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- PERFORMANCES WORLDWIDE -->
+<section class="section-parchment" id="performances">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">World Tour</p>
+      <h2 class="section-title section-title-dark">Ragasutra Across the Globe</h2>
+      <p class="section-subtitle">From the temples of India to the concert halls of Europe and America</p>
+    </div>
+
+    <!-- Full width banner -->
+    <img src="images/tabla_sitar_duo.jpg" alt="Sitar and Tabla Duo Performance" class="image-banner" style="height:350px; margin-bottom:0;">
+    <div class="image-banner-caption">Sitar &amp; Tabla — The Sacred Dialogue of Ragasutra</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+      <!-- Left: Timeline -->
+      <div>
+        <h3 style="font-family:'Cinzel',serif; color:var(--deep-maroon); font-size:1rem; letter-spacing:0.2rem; text-transform:uppercase; margin-bottom:1.5rem;">Performance History</h3>
+        <div class="tour-timeline">
+          <div class="tour-event">
+            <div class="tour-event-year">2025 · Florida, USA</div>
+            <div class="tour-event-title">Ragas Live — Music for the Soul</div>
+            <div class="tour-event-detail">Palladium Theater, St. Petersburg, FL · August 3, 2025<br>Tabla: <strong>Shankh Lahiri</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2025 · Florida, USA</div>
+            <div class="tour-event-title">International Guitar Festival — World Music Series</div>
+            <div class="tour-event-detail">Timucua Arts Foundation, Orlando, FL · August 2, 2025<br>Tabla: <strong>Shankh Lahiri</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2025 · Germany</div>
+            <div class="tour-event-title">Ragasutra Tour — Moving Cultures Festival</div>
+            <div class="tour-event-detail">Frankfurt, Germany<br>Tabla: <strong>Shankh Lahiri</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2024 · Florida, USA</div>
+            <div class="tour-event-title">Tampa Bay Indian &amp; World Music Festival</div>
+            <div class="tour-event-detail">Florida Hindu Temple Auditorium, Tampa, FL · September 29, 2024<br>Tabla: <strong>Shankh Lahiri</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2024 · Germany</div>
+            <div class="tour-event-title">Ruhrfestspiele Recklinghausen</div>
+            <div class="tour-event-detail">Recklinghausen, Germany</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2024 · Germany</div>
+            <div class="tour-event-title">Europäisches Musikfest Stuttgart</div>
+            <div class="tour-event-detail">Stuttgart, Germany</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2023 · USA</div>
+            <div class="tour-event-title">Carnegie Hall Residency</div>
+            <div class="tour-event-detail">Academy of Carnegie Hall, New York, USA</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2023 · India</div>
+            <div class="tour-event-title">Goethe Institute Tour</div>
+            <div class="tour-event-detail">Multiple venues across India</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2023 · France</div>
+            <div class="tour-event-title">RECOLLETS Residency</div>
+            <div class="tour-event-detail">Paris, France</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2022 · India</div>
+            <div class="tour-event-title">India Habitat Centre</div>
+            <div class="tour-event-detail">New Delhi, India</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2021 · Switzerland</div>
+            <div class="tour-event-title">Rietbergmuseum Zurich</div>
+            <div class="tour-event-detail">Zurich, Switzerland<br>Tabla: <strong>Florian Schiertz</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2020 · Germany</div>
+            <div class="tour-event-title">Livestream — LOFT Cologne</div>
+            <div class="tour-event-detail">Cologne, Germany · May 6, 2020<br>Tabla: <strong>Arup Sen Gupta</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2019 · Switzerland</div>
+            <div class="tour-event-title">Concert in Lucerne</div>
+            <div class="tour-event-detail">Lucerne, Switzerland · March 31, 2019<br>Tabla: <strong>Florian Schiertz</strong></div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2012 · Japan</div>
+            <div class="tour-event-title">Japan Concert Tour — Raga Janasammohini</div>
+            <div class="tour-event-detail">Multiple venues, Japan · December 2012<br>Sitar: Hindol Deb · Sarangi: Sandeep Mishra · Tabla: Amit Mishra<br>Raga Janasammohini — Alap, Madhyalaya, Drut Gat &amp; Jhala</div>
+          </div>
+          <div class="tour-event">
+            <div class="tour-event-year">2008 · India</div>
+            <div class="tour-event-title">SwarGanga Music Festival</div>
+            <div class="tour-event-detail">India · December 20–21, 2008<br>Raga Hemant</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Venue Photos -->
+      <div>
+        <h3 style="font-family:'Cinzel',serif; color:var(--deep-maroon); font-size:1rem; letter-spacing:0.2rem; text-transform:uppercase; margin-bottom:1.5rem;">Venues &amp; Festivals</h3>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="gold-border">
+            <img src="images/tampa_bay_festival_poster.jpg" alt="Tampa Bay Indian & World Music Festival 2024" style="width:100%; display:block;">
+          </div>
+          <div class="gold-border">
+            <img src="images/ragas_live_sitar_tabla_poster.jpg" alt="Ragas Live — Sitar & Tabla at Palladium Theater" style="width:100%; display:block;">
+          </div>
+          <div class="gold-border">
+            <img src="images/hindol_shankh_ragas_live.png" alt="Hindol Deb and Shankh Lahiri — Ragas Live" style="width:100%; display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Cards -->
+    <div class="ornament-divider" style="margin-top:3rem;">✦ ✦ ✦</div>
+    <div class="performance-cards" style="margin-top:2rem;">
+      <div class="perf-card">
+        <img src="images/hindol_gmi_performance.jpg" alt="Hindol Deb — Stage Performance" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Florida, USA</div>
+          <div class="perf-card-title">Tampa Bay Indian &amp; World Music Festival</div>
+          <div class="perf-card-details">Florida Hindu Temple Auditorium, Tampa · September 29, 2024. A landmark performance at one of Florida's premier Indian classical music festivals, uniting the world through the power of music.</div>
+          <div class="perf-card-tabla">Tabla: Shankh Lahiri</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/tabla_sitar_duo2.jpg" alt="Sitar Tabla Duo Performance" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Florida, USA</div>
+          <div class="perf-card-title">Ragas Live — Music for the Soul</div>
+          <div class="perf-card-details">Palladium Theater, St. Petersburg, FL · August 3, 2025. Two sets with intermission, featuring vocal compositions and instrumental interpretations. A sold-out evening of Indian classical music.</div>
+          <div class="perf-card-tabla">Tabla: Shankh Lahiri</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/hindol_sitar_church_performance.jpeg" alt="Church Concert" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Germany &amp; Europe</div>
+          <div class="perf-card-title">Ragasutra Tour — Moving Cultures Festival</div>
+          <div class="perf-card-details">Frankfurt, Germany · 2025. Part of the annual Ragasutra Tour, bringing the pure tradition of Indian classical music to European audiences. The tour has taken Hindol to concert halls, churches, and festivals across Germany.</div>
+          <div class="perf-card-tabla">Tabla: Shankh Lahiri</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/sitar_tabla_nyfolklore.jpg" alt="New York Folklore Concert" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">New York, USA</div>
+          <div class="perf-card-title">Academy of Carnegie Hall Residency</div>
+          <div class="perf-card-details">Carnegie Hall, New York · 2023. Hindol was invited for a prestigious music residency at the Academy of Carnegie Hall, one of the world's most celebrated concert venues.</div>
+          <div class="perf-card-tabla">Residency Program</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/mughal_miniature_painting.png" alt="Paris Residency" class="perf-card-img" style="object-position: top;">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Paris, France</div>
+          <div class="perf-card-title">RECOLLETS Residency</div>
+          <div class="perf-card-details">Paris, France · 2023. Hindol was invited for a music residency at the prestigious RECOLLETS in Paris, one of France's leading centers for artistic creation and cultural exchange.</div>
+          <div class="perf-card-tabla">Residency Program</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/indian_classical_sitar_tabla.jpg" alt="India Performance" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">New Delhi, India</div>
+          <div class="perf-card-title">India Habitat Centre</div>
+          <div class="perf-card-details">New Delhi, India · 2022. A performance at one of India's most prestigious cultural venues, the India Habitat Centre in New Delhi. A homecoming for Hindol, performing for the most discerning audiences of the Indian classical tradition.</div>
+          <div class="perf-card-tabla">Indian Classical Solo</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/hindol_jazz_cologne.jpg" alt="Cologne Germany" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Cologne, Germany</div>
+          <div class="perf-card-title">LOFT Cologne — Livestream Concert</div>
+          <div class="perf-card-details">LOFT, Cologne, Germany · May 6, 2020. A special livestreamed performance from one of Cologne's premier jazz and world music venues, bringing Ragasutra to audiences across the world during a time when live performance was impossible.</div>
+          <div class="perf-card-tabla">Tabla: Arup Sen Gupta</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/hindol_japan_concert_hall.jpg" alt="Japan Concert 2012" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Japan</div>
+          <div class="perf-card-title">Japan Concert Tour — Raga Janasammohini</div>
+          <div class="perf-card-details">Multiple venues across Japan · December 2012. A landmark tour of Japan featuring Raga Janasammohini in its full classical format — Alap, Madhyalaya, Drut Gat &amp; Jhala. Hindol performed alongside sarangi maestro Sandeep Mishra in a large modern concert hall, bringing the depth of Hindustani classical music to Japanese audiences.</div>
+          <div class="perf-card-tabla">Tabla: Amit Mishra · Sarangi: Sandeep Mishra</div>
+        </div>
+      </div>
+      <div class="perf-card">
+        <img src="images/tabla_sitar_duo3.jpg" alt="Switzerland Concert" class="perf-card-img">
+        <div class="perf-card-body">
+          <div class="perf-card-location">Switzerland</div>
+          <div class="perf-card-title">Rietbergmuseum Zurich &amp; Lucerne</div>
+          <div class="perf-card-details">Zurich &amp; Lucerne, Switzerland · 2019–2021. Multiple performances in Switzerland, including at the prestigious Rietbergmuseum in Zurich, one of Europe's leading museums of non-European art and culture.</div>
+          <div class="perf-card-tabla">Tabla: Florian Schiertz</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- GALLERY -->
+<section class="section-dark" id="gallery">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">Visual Archive</p>
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-subtitle section-subtitle-light">Moments from the world of Ragasutra</p>
+    </div>
+
+    <div class="gallery-masonry">
+      <div class="gallery-item">
+        <img src="images/hindol_gmi_stage.jpg" alt="Hindol Deb on Stage">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Stage Performance</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/mughal_court_music.jpg" alt="Mughal Court Music">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Mughal Musical Heritage</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/sitar_tabla_nyfolklore.jpg" alt="Sitar Tabla Concert">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Sitar &amp; Tabla Duo</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_popakademie.jpg" alt="Hindol Deb Portrait">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Hindol Deb — Sitarist</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/tabla_drums.jpg" alt="Tabla Drums">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">The Tabla</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_wdr_sitar.jpg" alt="Hindol Deb WDR">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">WDR Radio Recording</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/indian_classical_varanasi.jpg" alt="Indian Classical Concert Varanasi">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Indian Classical Concert</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/mughal_music_miniature.jpg" alt="Mughal Music Miniature">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Mughal Miniature — Court Music</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/tabla_sitar_duo.jpg" alt="Tabla Sitar Duo">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">The Sacred Dialogue</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_master_sitarist.jpg" alt="Hindol Deb Master Sitarist">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Master Sitarist</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/sitar_closeup.jpg" alt="Sitar Close Up">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">The Sitar — Detail</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/musical_mandala.jpg" alt="Musical Mandala">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Musical Mandala</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_sitar_tabla_duo.jpeg" alt="Hindol Sitar Tabla Duo">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Sitar &amp; Tabla — Live</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/ravi_shankar_sitar.jpg" alt="Ravi Shankar Sitar">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">The Sitar Tradition</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/indian_classical_sitar_tabla.jpg" alt="Indian Classical Music">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Indian Classical Music</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_red_shirt_portrait.jpg" alt="Hindol Deb Portrait">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Hindol Deb — Portrait</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_soniq_bw.jpg" alt="Hindol Deb Black and White">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Hindol Deb — Soniq</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/sitar_traditional_room.jpg" alt="Sitar in Traditional Room">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">The Sitar — Traditional Setting</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_japan_concert_hall.jpg" alt="Japan Concert Hall 2012">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Japan Tour 2012 — Concert Hall</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_gmi_stage.jpg" alt="Hindol Deb GMI Stage">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Live on Stage</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hindol_soniq_stage.jpg" alt="Hindol Deb Soniq Stage">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Hindol Deb — Live Performance</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- TABLA PLAYERS -->
+<section class="section-parchment" id="tabla">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Rhythmic Heart</p>
+      <h2 class="section-title section-title-dark">The Tabla Players</h2>
+      <p class="section-subtitle">The masters of rhythm who have brought Ragasutra to life</p>
+    </div>
+
+    <p style="font-size:1.1rem; line-height:1.9; color:var(--text-dark); max-width:800px; margin:0 auto 3rem; text-align:center;">
+      In the tradition of Indian classical music, the tabla player is not merely an accompanist — they are a co-creator, an equal partner in the musical dialogue. The tabla player must listen deeply to the soloist, responding to their every nuance and inflection, while simultaneously maintaining the rhythmic cycle and exploring its own creative possibilities. Hindol Deb has been fortunate to collaborate with some of the finest tabla players of his generation.
+    </p>
+
+    <div class="tabla-players-grid">
+      <div class="tabla-player-card">
+        <img src="images/shankh_lahiri_tabla.jpeg" alt="Shankh Lahiri — Tabla" class="tabla-player-img">
+        <div class="tabla-player-name">Shankh Lahiri</div>
+        <div class="tabla-player-role">Tabla Artist · Tampa, Florida, USA</div>
+        <p class="tabla-player-bio">
+          Son of the visionary sitarist Shri Rabindranath Lahiri, Shankh Lahiri has devoted his life to Indian classical music. A devoted disciple of world-renowned tabla maestro Pandit Nayan Ghosh, he is an internationally touring tabla artist and founder of the Shruti Foundation and Shruti School of Music in Tampa, Florida. He has performed with Hindol Deb at the Tampa Bay Indian &amp; World Music Festival (2024), the Palladium Theater in St. Petersburg (2025), and the International Guitar Festival in Orlando (2025).
+        </p>
+      </div>
+      <div class="tabla-player-card">
+        <img src="images/tabla_drums.jpg" alt="Arup Sen Gupta — Tabla" class="tabla-player-img">
+        <div class="tabla-player-name">Arup Sen Gupta</div>
+        <div class="tabla-player-role">Tabla Artist · Germany</div>
+        <p class="tabla-player-bio">
+          Born and raised in Germany, Arup Sen Gupta is one of the most sought-after tabla accompanists in Europe. A disciple of Sri Subhen Chatterjee and Pandit Swapan Chaudhuri (Lucknow Gharana), he has accompanied some of India's finest musicians across Europe, India, and the USA. He performed with Hindol Deb in a memorable livestreamed concert from the LOFT in Cologne in May 2020.
+        </p>
+      </div>
+      <div class="tabla-player-card">
+        <img src="images/tabla_sitar_duo3.jpg" alt="Florian Schiertz — Tabla" class="tabla-player-img">
+        <div class="tabla-player-name">Florian Schiertz</div>
+        <div class="tabla-player-role">Tabla Artist · Switzerland &amp; Germany</div>
+        <p class="tabla-player-bio">
+          A versatile tabla player based in Switzerland and Germany, Florian Schiertz has collaborated with Hindol Deb for performances in Switzerland, including a concert in Lucerne in 2019 and at the Rietbergmuseum in Zurich in 2021. He has performed with numerous Indian classical musicians across Europe.
+        </p>
+      </div>
+      <div class="tabla-player-card">
+        <img src="images/tabla_sitar_duo2.jpg" alt="Amit Mishra — Tabla" class="tabla-player-img">
+        <div class="tabla-player-name">Amit Mishra</div>
+        <div class="tabla-player-role">Tabla Artist · India</div>
+        <p class="tabla-player-bio">
+          An accomplished tabla player from India, Amit Mishra has performed with Hindol Deb in a sitar recital of Raga Gawoti, presented by EKSWAR. His playing is known for its precision, sensitivity, and deep understanding of the Hindustani classical tradition.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tabla Section Image -->
+    <div style="margin-top:3rem;">
+      <img src="images/tabla_sitar_duo.jpg" alt="Sitar and Tabla — The Sacred Dialogue" class="image-banner" style="height:300px;">
+      <div class="image-banner-caption">The Tabla — Voice of Rhythm, Partner of the Raga</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- MUGHAL HERITAGE SECTION -->
+<section class="section-dark mughal-section" style="padding: 6rem 2rem;">
+  <div class="mughal-bg"></div>
+  <div class="section-container">
+    <div class="mughal-content">
+      <p class="section-eyebrow" style="color:var(--antique-gold);">The Heritage</p>
+      <h2 class="section-title" style="margin-bottom:2rem;">A Tradition of Three Thousand Years</h2>
+      <p>
+        The music that Hindol Deb plays in Ragasutra is the living heir to a tradition that stretches back over three thousand years, to the sacred hymns of the Sama Veda. It was nurtured in the courts of the Mughal emperors, who were passionate patrons of music and the arts. It was refined by generations of masters — the dhrupadiya singers, the been players, the sitar virtuosos — each adding their own contribution to the ever-evolving tradition.
+      </p>
+      <p>
+        The great Mughal emperor Akbar is said to have been so moved by the music of Tansen, his court musician, that he would weep with emotion. The tradition of Indian classical music has always been understood as a spiritual practice as much as an artistic one — a means of approaching the divine through the power of sound.
+      </p>
+      <p>
+        When Hindol Deb sits on stage with his sitar, he carries this entire tradition within him. Every note he plays is informed by the teachings of his gurus, the wisdom of the ancient texts, and the living spirit of the raga. Ragasutra is his offering to this tradition — a dedication to its purity, its depth, and its timeless beauty.
+      </p>
+      <div class="ornament-divider" style="color:var(--antique-gold);">✦ ✦ ✦</div>
+      <div class="quote-block" style="border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.05); max-width:700px; margin:0 auto;">
+        <p>"He remains a torchbearer for the Indian classical tradition, ensuring its intricate microtones and rhythmic precision resonate across cultures and generations."</p>
+        <cite>— hindoldeb.com</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- FINAL GALLERY STRIP -->
+<section class="section-maroon" style="padding: 3rem 2rem;">
+  <div class="section-container">
+    <div class="section-header">
+      <p class="section-eyebrow">The Journey Continues</p>
+      <h2 class="section-title">More from Ragasutra</h2>
+    </div>
+    <div class="photo-strip">
+      <img src="images/hindol_red_shirt_portrait.jpg" alt="Hindol Deb Portrait">
+      <img src="images/hindol_soniq_bw.jpg" alt="Hindol Deb Black and White">
+      <img src="images/hindol_gmi_stage.jpg" alt="Hindol Deb on Stage">
+      <img src="images/hindol_sitar_tabla_duo.jpeg" alt="Sitar Tabla Duo">
+      <img src="images/hindol_soniq_stage.jpg" alt="Hindol Deb Live">
+      <img src="images/hindol_portrait_tall.jpg" alt="Hindol Deb Portrait">
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ragasutra</div>
+  <p class="footer-tagline">रागसूत्र — The Thread of Raga · Pure Indian Classical Music</p>
+  <div class="footer-links">
+    <a href="https://hindoldeb.com" target="_blank">hindoldeb.com</a>
+    <a href="https://hindoldeb.com/about" target="_blank">About Hindol Deb</a>
+    <a href="https://hindoldeb.com/performances" target="_blank">Performances</a>
+    <a href="https://hindoldeb.com/blog" target="_blank">The Raga Notebook</a>
+    <a href="https://hindoldeb.com/acim" target="_blank">Antara Center</a>
+  </div>
+  <p class="footer-copy">© Hindol Deb · Ragasutra · All Rights Reserved · contact@hindoldeb.com</p>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Fade in sections on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.icm-card, .perf-card, .tabla-player-card, .raga-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
